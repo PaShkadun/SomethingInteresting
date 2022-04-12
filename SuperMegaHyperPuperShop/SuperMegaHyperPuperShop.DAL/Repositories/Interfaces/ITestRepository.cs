@@ -1,4 +1,4 @@
-﻿using SuperMegaHyperPuperShop.DAL.Models;
+﻿using SuperMegaHyperPuperShop.DAL.Entities;
 using System.Threading.Tasks;
 
 namespace SuperMegaHyperPuperShop.DAL.Repositories.Interfaces

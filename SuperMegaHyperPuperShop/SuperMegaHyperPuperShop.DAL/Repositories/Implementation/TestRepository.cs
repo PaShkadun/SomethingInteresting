@@ -1,5 +1,5 @@
 ﻿using SuperMegaHyperPuperShop.DAL.Datas;
-using SuperMegaHyperPuperShop.DAL.Models;
+using SuperMegaHyperPuperShop.DAL.Entities;
 using SuperMegaHyperPuperShop.DAL.Repositories.Interfaces;
 using System;
 using System.Threading.Tasks;

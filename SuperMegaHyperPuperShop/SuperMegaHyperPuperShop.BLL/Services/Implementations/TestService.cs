@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using SuperMegaHyperPuperShop.BLL.Models;
 using SuperMegaHyperPuperShop.BLL.Services.Interfaces;
-using SuperMegaHyperPuperShop.DAL.Models;
+using SuperMegaHyperPuperShop.DAL.Entities;
 using SuperMegaHyperPuperShop.DAL.Repositories.Interfaces;
 using System.Threading.Tasks;
 
