@@ -25,6 +25,7 @@ namespace SuperMegaHyperPuperShop
             services.AddAutoMapper(typeof(MVCMapper).Assembly, typeof(BLLMapper).Assembly);
 
             services.AddBusinessLogic(Configuration);
+            services.AddSwaggerGen();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -33,6 +34,13 @@ namespace SuperMegaHyperPuperShop
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+
+                app.UseSwagger();
+                app.UseSwaggerUI(options =>
+                {
+                    options.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
+                    options.RoutePrefix = string.Empty;
+                });
             }
             else
             {
