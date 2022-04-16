@@ -1,4 +1,4 @@
-﻿using SuperMegaHyperPuperShop.BLL.Models;
+﻿using SuperMegaHyperPuperShop.BLL.DTO;
 using System.Threading.Tasks;
 
 namespace SuperMegaHyperPuperShop.BLL.Services.Interfaces

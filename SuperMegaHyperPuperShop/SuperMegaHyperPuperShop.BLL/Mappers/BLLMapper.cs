@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using SuperMegaHyperPuperShop.BLL.Models;
+using SuperMegaHyperPuperShop.BLL.DTO;
 using SuperMegaHyperPuperShop.DAL.Entities;
 
 namespace SuperMegaHyperPuperShop.BLL.Mappers
@@ -8,6 +8,14 @@ namespace SuperMegaHyperPuperShop.BLL.Mappers
     {
         public BLLMapper()
         {
+            CreateMap<BookmarkDto, BookmarkEntity>().ReverseMap();
+            CreateMap<BucketDto, BucketEntity>().ReverseMap();
+            CreateMap<CategoryDto, CategoryEntity>().ReverseMap();
+            CreateMap<ItemDto, ItemEntity>().ReverseMap();
+            CreateMap<OrderHistoryDto, OrderHistoryEntity>().ReverseMap();
+            CreateMap<OrderInfoDto, OrderInfoEntity>().ReverseMap();
+            CreateMap<OrderItemDto, OrderItemEntity>().ReverseMap();
+            CreateMap<PermissionDto, PermisionEntity>().ReverseMap();
             CreateMap<PersonDto, PersonEntity>().ReverseMap();
         }
     }

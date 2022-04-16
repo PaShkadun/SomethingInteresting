@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
+using SuperMegaHyperPuperShop.BLL.DTO;
 using SuperMegaHyperPuperShop.Models;
-using SuperMegaHyperPuperShop.BLL.Models;
 
 namespace SuperMegaHyperPuperShop.Mappers
 {

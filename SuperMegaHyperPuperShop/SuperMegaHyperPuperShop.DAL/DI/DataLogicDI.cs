@@ -12,6 +12,7 @@ namespace SuperMegaHyperPuperShop.DAL.DI
         public static void AddDataLogic(this IServiceCollection service, IConfiguration config)
         {
             service.AddScoped<ITestRepository, TestRepository>();
+            service.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 
             service.AddDbContext<DataContext>(options =>
             {

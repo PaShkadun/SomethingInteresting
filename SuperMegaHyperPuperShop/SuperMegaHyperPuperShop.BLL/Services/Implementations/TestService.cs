@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using SuperMegaHyperPuperShop.BLL.Models;
+using SuperMegaHyperPuperShop.BLL.DTO;
 using SuperMegaHyperPuperShop.BLL.Services.Interfaces;
 using SuperMegaHyperPuperShop.DAL.Entities;
 using SuperMegaHyperPuperShop.DAL.Repositories.Interfaces;

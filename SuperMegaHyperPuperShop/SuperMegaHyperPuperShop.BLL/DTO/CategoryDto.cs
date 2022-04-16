@@ -1,13 +1,11 @@
 ﻿using System;
-
 namespace SuperMegaHyperPuperShop.BLL.DTO
 {
-    public class PersonDto
+    public class CategoryDto
     {
 #nullable disable
         public string Name { get; set; }
 #nullable enable
-        public int Age { get; set; }
-        public DateTime Birthday { get; set; }
+        public int Id { get; set; }
     }
 }

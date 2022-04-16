@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using SuperMegaHyperPuperShop.BLL.Models;
+using SuperMegaHyperPuperShop.BLL.DTO;
 using SuperMegaHyperPuperShop.BLL.Services.Interfaces;
 using SuperMegaHyperPuperShop.Models;
 using System.Threading.Tasks;
