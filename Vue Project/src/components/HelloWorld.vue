@@ -1,0 +1,10 @@
+<template>
+  <p>Suck my fucking dick!</p>
+</template>
+
+<script>
+</script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped>
+</style>

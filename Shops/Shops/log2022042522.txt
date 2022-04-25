@@ -1,0 +1,279 @@
+2022-04-25 22:01:01.471 +03:00 [INF] Response to /item/getByCategory
+2022-04-25 22:02:56.596 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:03:13.590 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:04:23.487 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:04:27.453 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:04:45.285 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:04:51.862 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:05:26.626 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:05:46.820 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:06:41.922 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:06:52.721 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:07:17.089 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:07:33.722 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:07:47.512 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:09:39.246 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:09:44.873 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:15:25.240 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:15:25.868 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:15:25.947 +03:00 [ERR] A task was canceled.
+
+2022-04-25 22:15:25.951 +03:00 [ERR] Error query: /category/getAll
+2022-04-25 22:18:33.005 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:19:37.239 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:19:53.204 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:20:43.900 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:21:00.268 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:21:06.996 +03:00 [INF] Response to /item/getByCategory
+2022-04-25 22:21:43.774 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:21:47.255 +03:00 [INF] Response to /item/getByCategory
+2022-04-25 22:22:34.237 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:29:47.475 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:29:50.110 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:30:21.001 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:30:21.638 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:30:22.139 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:30:22.696 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:30:23.040 +03:00 [ERR] A task was canceled.
+
+2022-04-25 22:30:23.057 +03:00 [ERR] Error query: /category/getAll
+2022-04-25 22:30:23.451 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:30:23.561 +03:00 [ERR] A task was canceled.
+
+2022-04-25 22:30:23.569 +03:00 [ERR] Error query: /category/getAll
+2022-04-25 22:30:23.867 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:30:23.995 +03:00 [ERR] A task was canceled.
+
+2022-04-25 22:30:23.998 +03:00 [ERR] Error query: /category/getAll
+2022-04-25 22:30:24.308 +03:00 [ERR] A task was canceled.
+
+2022-04-25 22:30:24.311 +03:00 [ERR] Error query: /category/getAll
+2022-04-25 22:30:24.776 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:30:25.198 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:30:25.719 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:30:26.171 +03:00 [ERR] A task was canceled.
+
+2022-04-25 22:30:26.177 +03:00 [ERR] Error query: /category/getAll
+2022-04-25 22:30:26.207 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:30:26.979 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:30:28.059 +03:00 [ERR] A task was canceled.
+
+2022-04-25 22:30:28.068 +03:00 [ERR] Error query: /category/getAll
+2022-04-25 22:30:28.152 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:30:28.684 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:30:29.171 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:30:29.702 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:30:30.651 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:30:31.124 +03:00 [ERR] A task was canceled.
+
+2022-04-25 22:30:31.127 +03:00 [ERR] Error query: /category/getAll
+2022-04-25 22:30:31.302 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:30:33.069 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:30:33.488 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:30:34.048 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:30:34.537 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:30:34.998 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:30:35.454 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:30:36.056 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:30:36.596 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:30:37.638 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:30:38.156 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:30:38.689 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:30:39.133 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:30:39.579 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:30:40.045 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:30:40.453 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:30:40.890 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:30:41.330 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:30:41.806 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:30:42.273 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:30:42.756 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:30:43.268 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:30:43.722 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:30:44.225 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:30:44.668 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:30:45.300 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:30:45.918 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:30:46.364 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:30:47.106 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:30:48.120 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:30:48.973 +03:00 [ERR] A task was canceled.
+
+2022-04-25 22:30:48.995 +03:00 [ERR] Error query: /category/getAll
+2022-04-25 22:30:49.255 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:30:50.167 +03:00 [ERR] A task was canceled.
+
+2022-04-25 22:30:50.200 +03:00 [ERR] Error query: /category/getAll
+2022-04-25 22:30:50.709 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:30:51.218 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:30:51.939 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:30:52.833 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:30:53.333 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:30:54.076 +03:00 [ERR] A task was canceled.
+
+2022-04-25 22:30:54.077 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:30:54.097 +03:00 [ERR] Error query: /category/getAll
+2022-04-25 22:30:54.614 +03:00 [ERR] A task was canceled.
+
+2022-04-25 22:30:54.616 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:30:54.621 +03:00 [ERR] Error query: /category/getAll
+2022-04-25 22:30:55.145 +03:00 [ERR] A task was canceled.
+
+2022-04-25 22:30:55.148 +03:00 [ERR] Error query: /category/getAll
+2022-04-25 22:30:55.167 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:30:55.684 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:30:56.025 +03:00 [ERR] A task was canceled.
+
+2022-04-25 22:30:56.032 +03:00 [ERR] Error query: /category/getAll
+2022-04-25 22:30:56.064 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:30:56.505 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:30:57.170 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:30:58.172 +03:00 [ERR] A task was canceled.
+
+2022-04-25 22:30:58.180 +03:00 [ERR] Error query: /category/getAll
+2022-04-25 22:30:58.751 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:30:59.325 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:30:59.786 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:31:00.228 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:31:00.634 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:31:01.079 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:31:01.434 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:31:01.839 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:31:02.324 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:31:02.874 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:31:04.055 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:31:04.545 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:31:05.035 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:31:05.440 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:31:05.930 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:31:06.340 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:31:06.696 +03:00 [ERR] A task was canceled.
+
+2022-04-25 22:31:06.699 +03:00 [ERR] Error query: /category/getAll
+2022-04-25 22:31:06.761 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:31:07.205 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:31:07.588 +03:00 [ERR] A task was canceled.
+
+2022-04-25 22:31:07.591 +03:00 [ERR] Error query: /category/getAll
+2022-04-25 22:31:07.665 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:31:08.058 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:31:08.493 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:31:08.906 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:31:09.333 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:31:09.770 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:31:10.184 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:31:10.599 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:31:11.068 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:31:11.507 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:31:12.055 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:31:15.851 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:31:16.399 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:31:17.258 +03:00 [ERR] A task was canceled.
+
+2022-04-25 22:31:17.259 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:31:17.260 +03:00 [ERR] Error query: /category/getAll
+2022-04-25 22:31:18.485 +03:00 [ERR] A task was canceled.
+
+2022-04-25 22:31:18.502 +03:00 [ERR] Error query: /category/getAll
+2022-04-25 22:31:18.896 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:31:19.421 +03:00 [ERR] A task was canceled.
+
+2022-04-25 22:31:19.426 +03:00 [ERR] Error query: /category/getAll
+2022-04-25 22:31:19.473 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:31:20.292 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:31:21.087 +03:00 [ERR] A task was canceled.
+
+2022-04-25 22:31:21.087 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:31:21.091 +03:00 [ERR] Error query: /category/getAll
+2022-04-25 22:31:21.654 +03:00 [ERR] A task was canceled.
+
+2022-04-25 22:31:21.664 +03:00 [ERR] Error query: /category/getAll
+2022-04-25 22:31:22.140 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:31:22.614 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:31:23.062 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:31:23.512 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:31:24.347 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:31:24.765 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:31:25.188 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:31:25.596 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:31:26.015 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:31:26.415 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:31:26.851 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:31:27.314 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:31:27.860 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:31:28.294 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:31:28.783 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:31:30.332 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:31:30.781 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:31:31.267 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:31:31.750 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:31:32.272 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:31:32.856 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:31:33.299 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:31:33.742 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:31:34.170 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:31:34.574 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:31:35.120 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:31:35.534 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:31:35.971 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:31:36.477 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:31:36.930 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:31:37.346 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:31:37.809 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:31:38.247 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:31:38.673 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:31:39.599 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:31:43.703 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:33:38.451 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:46:51.924 +03:00 [INF] Response to /swagger
+2022-04-25 22:46:52.383 +03:00 [ERR] Invalid path /swagger
+2022-04-25 22:49:10.415 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:49:34.732 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:51:48.448 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:52:14.898 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:52:44.357 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:53:17.443 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:53:17.457 +03:00 [INF] Response to /category/getByName
+2022-04-25 22:53:18.412 +03:00 [ERR] Missing type map configuration or unsupported mapping.
+
+Mapping types:
+AsyncStateMachineBox`1 -> CategoryModel
+System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[[SuperMegaHyperPuperShop.BLL.DTO.CategoryDto, Shops.BLL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Shops.BLL.Services.Implementations.CategoryService+<GetByName>d__2, Shops.BLL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> SuperMegaHyperPuperShop.Models.CategoryModel
+
+2022-04-25 22:53:18.432 +03:00 [ERR] Error query: /category/getByName
+2022-04-25 22:56:19.787 +03:00 [INF] Response to /swagger
+2022-04-25 22:56:20.536 +03:00 [ERR] Invalid path /swagger
+2022-04-25 22:56:22.477 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:56:22.477 +03:00 [INF] Response to /category/getByName
+2022-04-25 22:57:01.426 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:57:01.426 +03:00 [INF] Response to /category/getByName
+2022-04-25 22:57:01.658 +03:00 [INF] Response to /item/getByCategory
+2022-04-25 22:57:10.888 +03:00 [INF] Response to /category/getByName
+2022-04-25 22:57:10.906 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:57:10.978 +03:00 [INF] Response to /item/getByCategory
+2022-04-25 22:57:15.549 +03:00 [INF] Response to /category/getByName
+2022-04-25 22:57:15.557 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:57:15.626 +03:00 [INF] Response to /item/getByCategory
+2022-04-25 22:57:20.081 +03:00 [INF] Response to /category/getByName
+2022-04-25 22:57:20.105 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:57:20.228 +03:00 [INF] Response to /item/getByCategory
+2022-04-25 22:57:27.332 +03:00 [INF] Response to /category/getByName
+2022-04-25 22:57:27.339 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:57:27.406 +03:00 [INF] Response to /item/getByCategory
+2022-04-25 22:57:35.394 +03:00 [INF] Response to /category/getByName
+2022-04-25 22:57:35.397 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:57:35.469 +03:00 [INF] Response to /item/getByCategory
+2022-04-25 22:57:39.081 +03:00 [INF] Response to /category/getByName
+2022-04-25 22:57:39.089 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:57:39.141 +03:00 [INF] Response to /item/getByCategory
+2022-04-25 22:57:42.548 +03:00 [INF] Response to /category/getByName
+2022-04-25 22:57:42.548 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:57:42.610 +03:00 [INF] Response to /item/getByCategory
+2022-04-25 22:58:49.219 +03:00 [INF] Response to /swagger
+2022-04-25 22:58:49.556 +03:00 [ERR] Invalid path /swagger
+2022-04-25 22:58:57.032 +03:00 [INF] Response to /category/getByName
+2022-04-25 22:58:57.032 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:58:59.325 +03:00 [INF] Response to /item/getByCategory
+2022-04-25 22:59:05.394 +03:00 [INF] Response to /category/getAll
+2022-04-25 22:59:05.394 +03:00 [INF] Response to /category/getByName
+2022-04-25 22:59:05.459 +03:00 [INF] Response to /item/getByCategory

@@ -1,0 +1,58 @@
+2022-04-25 21:02:42.137 +03:00 [INF] Response to /swagger
+2022-04-25 21:02:42.515 +03:00 [ERR] Invalid path /swagger
+2022-04-25 21:11:48.438 +03:00 [INF] Response to /swagger
+2022-04-25 21:11:48.865 +03:00 [ERR] Invalid path /swagger
+2022-04-25 21:13:01.644 +03:00 [INF] Response to /swagger
+2022-04-25 21:13:02.123 +03:00 [ERR] Invalid path /swagger
+2022-04-25 21:14:14.654 +03:00 [INF] Response to /Permission/create
+2022-04-25 21:15:04.833 +03:00 [INF] Response to /Permission/create
+2022-04-25 21:15:15.803 +03:00 [INF] Response to /category/getAll
+2022-04-25 21:22:24.547 +03:00 [INF] Response to /category/getAll
+2022-04-25 21:23:02.177 +03:00 [INF] Response to /category/getAll
+2022-04-25 21:23:16.221 +03:00 [INF] Response to /person/create
+2022-04-25 21:23:16.934 +03:00 [ERR] Unable to track an entity of type 'PersonEntity' because its primary key property 'Id' is null.
+
+2022-04-25 21:23:16.937 +03:00 [ERR] Error query: /person/create
+2022-04-25 21:24:12.298 +03:00 [INF] Response to /category/getAll
+2022-04-25 21:24:22.622 +03:00 [INF] Response to /person/create
+2022-04-25 21:24:24.209 +03:00 [ERR] An error occurred while updating the entries. See the inner exception for details.
+The INSERT statement conflicted with the FOREIGN KEY constraint "FK_Persons_Permisions_PermisionId". The conflict occurred in database "Shops", table "dbo.Permisions", column 'Id'.
+The statement has been terminated.
+2022-04-25 21:24:24.216 +03:00 [ERR] Error query: /person/create
+2022-04-25 21:26:21.971 +03:00 [INF] Response to /swagger
+2022-04-25 21:26:22.994 +03:00 [ERR] Invalid path /swagger
+2022-04-25 21:26:47.854 +03:00 [INF] Response to /category/getAll
+2022-04-25 21:27:02.086 +03:00 [INF] Response to /person/create
+2022-04-25 21:27:03.632 +03:00 [ERR] An error occurred while updating the entries. See the inner exception for details.
+Invalid column name 'PermissionId'.
+2022-04-25 21:27:03.636 +03:00 [ERR] Error query: /person/create
+2022-04-25 21:28:18.680 +03:00 [INF] Response to /swagger
+2022-04-25 21:28:19.134 +03:00 [ERR] Invalid path /swagger
+2022-04-25 21:28:27.522 +03:00 [INF] Response to /person/create
+2022-04-25 21:33:00.390 +03:00 [INF] Response to /OrderHistory/create
+2022-04-25 21:33:01.553 +03:00 [ERR] An error occurred while updating the entries. See the inner exception for details.
+Cannot insert explicit value for identity column in table 'Items' when IDENTITY_INSERT is set to OFF.
+2022-04-25 21:33:01.564 +03:00 [ERR] Error query: /OrderHistory/create
+2022-04-25 21:33:11.218 +03:00 [INF] Response to /OrderHistory/create
+2022-04-25 21:33:37.058 +03:00 [INF] Response to /OrderHistory/getAll
+2022-04-25 21:33:51.347 +03:00 [INF] Response to /OrderItem/getAll
+2022-04-25 21:52:18.775 +03:00 [INF] Response to /category/getAll
+2022-04-25 21:52:25.803 +03:00 [INF] Response to /item/getByCategory
+2022-04-25 21:53:29.183 +03:00 [INF] Response to /item/getByCategory
+2022-04-25 21:53:31.270 +03:00 [INF] Response to /item/getByCategory
+2022-04-25 21:53:32.891 +03:00 [INF] Response to /category/getAll
+2022-04-25 21:53:34.335 +03:00 [INF] Response to /item/getByCategory
+2022-04-25 21:54:03.469 +03:00 [INF] Response to /category/getAll
+2022-04-25 21:54:04.596 +03:00 [INF] Response to /item/getByCategory
+2022-04-25 21:54:38.749 +03:00 [INF] Response to /category/getAll
+2022-04-25 21:55:10.044 +03:00 [INF] Response to /category/getAll
+2022-04-25 21:55:11.202 +03:00 [INF] Response to /item/getByCategory
+2022-04-25 21:55:39.109 +03:00 [INF] Response to /category/getAll
+2022-04-25 21:55:40.342 +03:00 [INF] Response to /item/getByCategory
+2022-04-25 21:56:08.790 +03:00 [INF] Response to /category/getAll
+2022-04-25 21:56:09.410 +03:00 [INF] Response to /item/getByCategory
+2022-04-25 21:57:04.809 +03:00 [INF] Response to /category/getAll
+2022-04-25 21:57:12.629 +03:00 [INF] Response to /item/getByCategory
+2022-04-25 21:57:54.223 +03:00 [INF] Response to /category/getAll
+2022-04-25 21:57:54.752 +03:00 [INF] Response to /item/getByCategory
+2022-04-25 21:59:41.765 +03:00 [INF] Response to /item/getById
