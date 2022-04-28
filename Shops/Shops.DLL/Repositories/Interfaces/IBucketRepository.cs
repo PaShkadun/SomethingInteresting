@@ -8,5 +8,6 @@ namespace SuperMegaHyperPuperShop.DAL.Repositories.Interfaces
     public interface IBucketRepository : IGenericRepository<BucketEntity>
     {
         Task<IEnumerable<BucketEntity>> GetAllByPerson(string personId, CancellationToken token);
+        Task<bool> RemoveRange(IEnumerable<BucketEntity> ids, CancellationToken token);
     }
 }

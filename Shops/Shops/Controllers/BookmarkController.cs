@@ -31,9 +31,9 @@ namespace SuperMegaHyperPuperShop.Controllers
         }
 
         [HttpDelete("delete")]
-        public async Task<BookmarkModel> Delete(int id, CancellationToken token)
+        public async Task<bool> Delete(int id, CancellationToken token)
         {
-            return _mapper.Map<BookmarkModel>(await _service.DeleteById(id, token));
+            return await _service.DeleteById(id, token);
         }
 
         [HttpGet("getAll")]
@@ -62,7 +62,7 @@ namespace SuperMegaHyperPuperShop.Controllers
             return _mapper.Map<IEnumerable<BookmarkModel>>(await _service.GetAllByItem(itemId, token));
         }
 
-        [HttpPost("getByPerson")]
+        [HttpGet("getByPerson")]
         public async Task<IEnumerable<BookmarkModel>> GetByPerson(string personId, CancellationToken token)
         {
             return _mapper.Map<IEnumerable<BookmarkModel>>(await _service.GetAllByPerson(personId, token));

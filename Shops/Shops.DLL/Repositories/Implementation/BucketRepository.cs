@@ -20,9 +20,17 @@ namespace Shops.DLL.Repositories.Implementation
 
         public async Task<IEnumerable<BucketEntity>> GetAllByPerson(string personId, CancellationToken token)
         {
-            var result = await _context.Buckets.Where(x => x.PersonId == personId).ToListAsync(token);
+            var result = await _context.Buckets.AsNoTracking().Include(x => x.Item).Where(x => x.PersonId == personId).ToListAsync(token);
 
             return result;
+        }
+
+        public async Task<bool> RemoveRange(IEnumerable<BucketEntity> ids, CancellationToken token)
+        {
+            _context.Set<BucketEntity>().RemoveRange(ids);
+            await _context.SaveChangesAsync();
+
+            return true;
         }
     }
 }

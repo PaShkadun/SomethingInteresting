@@ -5,6 +5,7 @@
             <button class="btn" @click="login" v-if="!isLoggedIn">Login</button>
             <button class="btn" @click="register" v-if="!isLoggedIn">Register</button>
             <button class="btn" @click="showBucket" v-if="isLoggedIn"><img width="32" height="32" src="images/bucket.png"></button>
+            <button class="btn" @click="showBookmark" v-if="isLoggedIn">Bookmark</button>
             <button class="btn" @click="logout" v-if="isLoggedIn">Logout</button>
         </div>
     </div>
@@ -44,7 +45,11 @@
         }
 
         showBucket() {
+            this.$emit("showBucket")
+        }
 
+        showBookmark() {
+            this.$emit("showBook")
         }
  
         logout() {

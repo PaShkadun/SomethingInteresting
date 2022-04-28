@@ -4,6 +4,7 @@ using SuperMegaHyperPuperShop.BLL.DTO;
 using SuperMegaHyperPuperShop.BLL.Services.Interfaces;
 using SuperMegaHyperPuperShop.Models;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -15,19 +16,27 @@ namespace Shops.Controllers
     {
         private readonly IMapper _mapper;
         private readonly IOrderHistoryService _service;
+        private readonly IOrderInfoService _infoService;
+        private readonly IOrderItemService _itemService;
 
-        public OrderHistoryController(IMapper mapper, IOrderHistoryService service)
+        public OrderHistoryController(IMapper mapper, 
+                                      IOrderHistoryService service,
+                                      IOrderInfoService infoService,
+                                      IOrderItemService itemService)
         {
             _mapper = mapper;
             _service = service;
+            _infoService = infoService;
+            _itemService = itemService;
         }
 
         [HttpPost("create")]
         public async Task<OrderHistoryModel> Add(OrderHistoryModel model, CancellationToken token)
         {
-            var dto = _mapper.Map<OrderHistoryDto>(model);
+            model.OrderItem = null;
+            var orderHistory = _mapper.Map<OrderHistoryModel>(await _service.Add(_mapper.Map<OrderHistoryDto>(model), token));
 
-            return _mapper.Map<OrderHistoryModel>(await _service.Add(dto, token));
+            return orderHistory;
         }
 
         [HttpDelete("delete")]

@@ -17,5 +17,15 @@ namespace Shops.DLL.Repositories.Implementation
         public OrderHistoryRepository(DataContext context) : base(context)
         {
         }
+
+        public override async Task<IEnumerable<OrderHistoryEntity>> Get(CancellationToken token)
+        {
+            return await _context.OrderHistories
+                           .AsNoTracking()
+                           .Include(x => x.OrderInfo)
+                           .ThenInclude(x => x.Person)
+                           .Include(x => x.OrderItem)
+                           .ToListAsync(token);
+        }
     }
 }

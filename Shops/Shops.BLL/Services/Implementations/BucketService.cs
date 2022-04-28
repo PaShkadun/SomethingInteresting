@@ -28,5 +28,10 @@ namespace Shops.BLL.Services.Implementations
 
             return _mapper.Map<IEnumerable<BucketDto>>(result);
         }
+
+        public async Task<bool> RemoveRange(IEnumerable<BucketDto> ids, CancellationToken token)
+        {
+            return await _bucketRepository.RemoveRange(_mapper.Map<IEnumerable<BucketEntity>>(ids), token);
+        }
     }
 }

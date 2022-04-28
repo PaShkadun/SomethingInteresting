@@ -19,11 +19,11 @@ namespace SuperMegaHyperPuperShop.DAL.Repositories.Implementation
 
         public virtual async Task<T> Add(T entity, CancellationToken token)
         {
-            var result = await _context.AddAsync(entity, token);
+            var result = await _context.Set<T>().AddAsync(entity, token);
 
             await _context.SaveChangesAsync(token);
 
-            return (T) result.Entity;
+            return result.Entity;
         }
 
         public virtual async Task<IEnumerable<T>> Get(CancellationToken token)
@@ -36,6 +36,7 @@ namespace SuperMegaHyperPuperShop.DAL.Repositories.Implementation
         public virtual async Task<T> GetById(int id, CancellationToken token)
         {
             var set = _context.Set<T>();
+
             var result = await set.FindAsync(id);
 
             return result;
@@ -43,18 +44,20 @@ namespace SuperMegaHyperPuperShop.DAL.Repositories.Implementation
 
         public virtual async Task<T> Update(T entity, CancellationToken token)
         {
-            var result = _context.Update<T>(entity);
+            _context.Update(entity);
 
             await _context.SaveChangesAsync(token);
 
-            return result.Entity;
+            return entity;
         }
 
         public virtual async Task<bool> DeleteById(int id, CancellationToken token)
         {
             var entity = await GetById(id, token);
 
-            _context.Remove<T>(entity);
+            _context.Set<T>().Remove(entity);
+
+            await _context.SaveChangesAsync(token);
 
             return true;
         }

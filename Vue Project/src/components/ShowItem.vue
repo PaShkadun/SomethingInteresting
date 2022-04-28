@@ -57,6 +57,7 @@ export default {
             })
             .then((result) => {
                 this.addedToBookmark = true
+                console.log(result)
             })
             .catch((result) => {
                 console.log("error")

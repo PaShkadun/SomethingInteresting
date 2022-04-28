@@ -1,7 +1,7 @@
 <template>
   <div id="app">
   
-    <Login @register="setReg" />
+    <Login @register="setReg" @showBook="setBookmark" @showBucket="setBucket"/>
 
     <HeadComponent @categoryChange="changeCat">
     </HeadComponent>
@@ -25,6 +25,14 @@
         <RegisterForm>
         </RegisterForm>
       </div>
+      <div v-else-if="isBookmark">
+        <Bookmark>
+        </Bookmark>
+      </div>
+      <div v-else-if="isBucket">
+        <Bucket>
+        </Bucket>
+      </div>
     </center>
   </div>
 </template>
@@ -37,6 +45,8 @@ import ShowCategoryItem from "@/components/ShowCategoryItem"
 import ShowItem from "@/components/ShowItem"
 import RegisterForm from "@/components/RegisterForm"
 import AuthService from '@/components/AuthServer'
+import Bookmark from '@/components/Bookmark'
+import Bucket from '@/components/Bucket'
 import axios from 'axios'
 
 import Login from '@/pages/Login'
@@ -54,6 +64,8 @@ export default {
     ShowItem,
     RegisterForm,
     axios,
+    Bookmark,
+    Bucket,
   },
   data() {
     return {
@@ -62,12 +74,30 @@ export default {
       items: [],
       itemId: 0,
       registration: false,
-      lastPath: ""
+      lastPath: "",
+      isBookmark: false,
+      isBucket: false
     }
   },
   methods: {
     setReg() {
       this.registration = true
+      this.categoryId = -1
+      this.itemId = 0
+      this.isBookmark = false
+      this.isBucket = false
+    },
+    setBookmark() {
+      this.isBookmark = true
+      this.registation = false
+      this.categoryId = -1
+      this.itemId = 0
+      this.isBucket = false
+    },
+    setBucket() {
+      this.isBucket = true
+      this.isBookmark = false
+      this.registation = false
       this.categoryId = -1
       this.itemId = 0
     },
@@ -85,12 +115,16 @@ export default {
       this.categoryId = newValue
       this.itemId = 0
       this.registation = false
+      this.isBookmark = false
+      this.isBucket = false
     },
     selectItem(index) {
       this.itemId = index
       this.items = []
       this.categoryId = -1
       this.registation = false
+      this.isBookmark = false
+      this.isBucket = false
     },
     updateList(newValue) {
       this.items = newValue

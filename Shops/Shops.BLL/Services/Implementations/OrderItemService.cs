@@ -22,6 +22,13 @@ namespace Shops.BLL.Services.Implementations
             _orderItemRepository = repository;
         }
 
+        public async Task<IEnumerable<OrderItemDto>> AddRange(IEnumerable<OrderItemDto> entities, CancellationToken token)
+        {
+            var result = await _orderItemRepository.AddRange(_mapper.Map<IEnumerable<OrderItemEntity>>(entities), token);
+
+            return _mapper.Map<IEnumerable<OrderItemDto>>(result);
+        }
+
         public async Task<IEnumerable<OrderItemDto>> GetAllByOrderInfo(int orderInfoId, CancellationToken token)
         {
             var result = await _orderItemRepository.GetAllByOrderInfo(orderInfoId, token);

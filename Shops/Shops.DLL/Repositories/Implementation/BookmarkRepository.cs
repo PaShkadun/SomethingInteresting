@@ -27,7 +27,7 @@ namespace Shops.DLL.Repositories.Implementation
 
         public async Task<IEnumerable<BookmarkEntity>> GetAllByPersonId(string personId, CancellationToken token)
         {
-            var result = await _context.Bookmarks.Where(x => x.PersonId == personId).ToListAsync(token);
+            var result = await _context.Bookmarks.AsNoTracking().Include(x => x.Item).Where(x => x.PersonId == personId).ToListAsync(token);
 
             return result;
         }

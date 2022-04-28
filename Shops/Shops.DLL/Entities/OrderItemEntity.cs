@@ -6,6 +6,7 @@
         public ItemEntity Item { get; set; }
 #nullable enable
         public int Id { get; set; }
+        public int ItemId { get; set; }
         public int ItemCount { get; set; }
         public int OrderHistoryId { get; set; }
         public int OrderInfoId { get; set; }

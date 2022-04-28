@@ -18,6 +18,14 @@ namespace Shops.DLL.Repositories.Implementation
         {
         }
 
+        public virtual async Task<IEnumerable<OrderItemEntity>> AddRange(IEnumerable<OrderItemEntity> entities, CancellationToken token)
+        {
+            await _context.OrderItems.AddRangeAsync(entities, token);
+            await _context.SaveChangesAsync(token);
+
+            return entities;
+        }
+
         public async Task<IEnumerable<OrderItemEntity>> GetAllByOrderInfo(int orderInfoId, CancellationToken token)
         {
             var result = await _context.OrderItems.Where(x => x.OrderInfoId == orderInfoId).ToListAsync(token);

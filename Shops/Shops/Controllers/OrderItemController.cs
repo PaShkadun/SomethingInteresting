@@ -4,6 +4,8 @@ using SuperMegaHyperPuperShop.BLL.DTO;
 using SuperMegaHyperPuperShop.BLL.Services.Interfaces;
 using SuperMegaHyperPuperShop.Models;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -15,19 +17,53 @@ namespace Shops.Controllers
     {
         private readonly IMapper _mapper;
         private readonly IOrderItemService _service;
+        private readonly IBucketService _bucketService;
 
-        public OrderItemController(IMapper mapper, IOrderItemService service)
+        public OrderItemController(IMapper mapper, IOrderItemService service, IBucketService bucketService)
         {
             _mapper = mapper;
             _service = service;
+            _bucketService = bucketService;
         }
 
         [HttpPost("create")]
-        public async Task<OrderItemModel> Add(OrderItemModel model, CancellationToken token)
+        public async Task<IEnumerable<OrderItemModel>> Add([FromQuery] int orderId, [FromQuery] int infoId, [FromQuery] int[] itemsIds, CancellationToken token)
         {
-            var dto = _mapper.Map<OrderItemDto>(model);
+            var list = new List<OrderItemModel>();
+            var idsList = new List<BucketModel>();
 
-            return _mapper.Map<OrderItemModel>(await _service.Add(dto, token));
+            for (var i = 0; i < itemsIds.Length; i++)
+            {
+                var model = new OrderItemModel { OrderHistoryId = orderId, OrderInfoId = infoId, ItemId = itemsIds[i] };
+
+                var dto = _mapper.Map<OrderItemDto>(model);
+                var result = _mapper.Map<OrderItemModel>(await _service.Add(dto, token));
+
+                list.Add(result);
+                idsList.Add(new BucketModel { Id = itemsIds[i] });
+            }
+
+            await _bucketService.RemoveRange(_mapper.Map<IEnumerable<BucketDto>>(idsList), token);
+
+            return list;
+        }
+
+        [HttpPost("createRange")]
+        public async Task<IEnumerable<OrderItemModel>> AddRange([FromQuery] string stringAsModel, CancellationToken token)
+        {
+            var model = stringAsModel.Replace('|', '"');
+
+            var newModel = JsonSerializer.Deserialize<List<OrderItemModel>>(model);
+
+            var dto = _mapper.Map<IEnumerable<OrderItemDto>>(newModel);
+            var result = _mapper.Map<IEnumerable<OrderItemModel>>(await _service.AddRange(dto, token));
+
+            /*if (result != null && result != default)
+            {
+                await _bucketService.RemoveRange(result.Select(x => x.Id).ToArray(), token);
+            }*/
+
+            return result;
         }
 
         [HttpDelete("delete")]
