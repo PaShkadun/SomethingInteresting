@@ -7,5 +7,6 @@ namespace SuperMegaHyperPuperShop.DAL.Repositories.Interfaces
 {
     public interface IOrderHistoryRepository : IGenericRepository<OrderHistoryEntity>
     {
+        Task<IEnumerable<OrderHistoryEntity>> GetByPerson(string personId, CancellationToken token);
     }
 }

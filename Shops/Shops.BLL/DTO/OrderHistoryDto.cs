@@ -6,7 +6,7 @@ namespace SuperMegaHyperPuperShop.BLL.DTO
     public class OrderHistoryDto
     {
 #nullable disable
-        public virtual List<OrderItemDto> OrderItem { get; set; }
+        public virtual IEnumerable<OrderItemDto> OrderItem { get; set; }
         public virtual OrderInfoDto OrderInfo { get; set; }
 #nullable enable
         public int Id { get; set; }

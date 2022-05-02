@@ -6,7 +6,7 @@ namespace SuperMegaHyperPuperShop.DAL.Entities
     public class OrderHistoryEntity
     {
 #nullable disable
-        public virtual List<OrderItemEntity> OrderItem { get; set; }
+        public virtual IEnumerable<OrderItemEntity> OrderItem { get; set; }
         public virtual OrderInfoEntity OrderInfo { get; set; }
 #nullable enable
         public int Id { get; set; }

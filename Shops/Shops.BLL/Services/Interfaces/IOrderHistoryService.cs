@@ -8,5 +8,6 @@ namespace SuperMegaHyperPuperShop.BLL.Services.Interfaces
 {
     public interface IOrderHistoryService : IGenericService<OrderHistoryDto>
     {
+        Task<IEnumerable<OrderHistoryDto>> GetByPerson(string personId, CancellationToken token);
     }
 }

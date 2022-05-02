@@ -4,7 +4,7 @@
             <p v-if="isLoggedIn" style="display: contents;">User: {{ username }}</p>
             <button class="btn" @click="login" v-if="!isLoggedIn">Login</button>
             <button class="btn" @click="register" v-if="!isLoggedIn">Register</button>
-            <button class="btn" @click="showBucket" v-if="isLoggedIn"><img width="32" height="32" src="images/bucket.png"></button>
+            <button class="btn" @click="showBucket" v-if="isLoggedIn"><img width="32" height="32" src="http://localhost:8080/images/bucket.png"></button>
             <button class="btn" @click="showBookmark" v-if="isLoggedIn">Bookmark</button>
             <button class="btn" @click="logout" v-if="isLoggedIn">Logout</button>
         </div>
@@ -45,10 +45,12 @@
         }
 
         showBucket() {
+            window.location.pathname = '/bucket'
             this.$emit("showBucket")
         }
 
         showBookmark() {
+            window.location.pathname = '/bookmark'
             this.$emit("showBook")
         }
  

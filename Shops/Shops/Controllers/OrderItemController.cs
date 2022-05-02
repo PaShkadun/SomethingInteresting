@@ -27,14 +27,14 @@ namespace Shops.Controllers
         }
 
         [HttpPost("create")]
-        public async Task<IEnumerable<OrderItemModel>> Add([FromQuery] int orderId, [FromQuery] int infoId, [FromQuery] int[] itemsIds, CancellationToken token)
+        public async Task<IEnumerable<OrderItemModel>> Add([FromQuery] int orderId, [FromQuery] int[] itemsIds, CancellationToken token)
         {
             var list = new List<OrderItemModel>();
             var idsList = new List<BucketModel>();
 
             for (var i = 0; i < itemsIds.Length; i++)
             {
-                var model = new OrderItemModel { OrderHistoryId = orderId, OrderInfoId = infoId, ItemId = itemsIds[i] };
+                var model = new OrderItemModel { OrderHistoryId = orderId, ItemId = itemsIds[i] };
 
                 var dto = _mapper.Map<OrderItemDto>(model);
                 var result = _mapper.Map<OrderItemModel>(await _service.Add(dto, token));
@@ -57,11 +57,6 @@ namespace Shops.Controllers
 
             var dto = _mapper.Map<IEnumerable<OrderItemDto>>(newModel);
             var result = _mapper.Map<IEnumerable<OrderItemModel>>(await _service.AddRange(dto, token));
-
-            /*if (result != null && result != default)
-            {
-                await _bucketService.RemoveRange(result.Select(x => x.Id).ToArray(), token);
-            }*/
 
             return result;
         }

@@ -1,17 +1,21 @@
 <template>
-    <div>
-        <img :src="'images/' + item.imgSrc">
-        <li>{{item.name}}</li>
-        <li>{{item.price}}</li>
-        <li>{{item.description}}</li>
-        <div v-if="isLoggedIn">
-            <button v-if="!addedToBucket" v-on:click="addToBucket" class="btn">Bucket</button>
-            <button v-else v-on:click="addToBucket" class="btn" disabled>Bucket</button>
-            <button v-if="!addedToBookmark" v-on:click="addToBookmark" class="btn">Bookmark</button>
-            <button v-else v-on:click="addToBookmark" class="btn" disabled>Bookmark</button>
+    <div style="display: flex; width: 100%;">
+        <div class="img">
+            <img :src="getBaseUrl() + '/images/' + item.imgSrc" @error="defaultImg" :width="512" :height="512">
         </div>
-        <div v-else>
-            <li>To add this item to bucket/bookmark, please, <button v-on:click="login" class="btn">login</button></li>
+        <div class="item-info">
+            <li>{{item.name}}</li>
+            <li>{{item.price}}</li>
+            <li>{{item.description}}</li>
+            <div v-if="isLoggedIn">
+                <button v-if="!addedToBucket" v-on:click="addToBucket" class="btn">Bucket</button>
+                <button v-else v-on:click="addToBucket" class="btn" disabled>Bucket</button>
+                <button v-if="!addedToBookmark" v-on:click="addToBookmark" class="btn">Bookmark</button>
+                <button v-else v-on:click="addToBookmark" class="btn" disabled>Bookmark</button>
+            </div>
+            <div v-else>
+                <li>To add this item to bucket/bookmark, please, <button v-on:click="login" class="btn">login</button></li>
+            </div>
         </div>
     </div>
 </template>
@@ -76,6 +80,12 @@ export default {
                 console.log("error")
                 console.log(result)
             })
+        },
+        getBaseUrl() {
+            return window.location.origin
+        },
+        defaultImg(event) {
+            event.target.src = window.location.origin + '/images/img.png'
         }
     },    
     updated() {
@@ -104,6 +114,18 @@ export default {
 </script>
 
 <style>
+    .item-info {
+        width: 100%;
+    }
+
+    .item-info:hover {
+        cursor: default;
+    }
+
+    button:hover {
+        cursor: pointer;
+    }
+
     .btn:disabled {
         background: #eaeaea;
     }

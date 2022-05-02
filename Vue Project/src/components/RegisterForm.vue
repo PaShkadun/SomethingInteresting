@@ -1,15 +1,15 @@
 <template>
-    <div>
+    <div class="form" style="margin-top: 50px;">
         <li v-if="!correctName">Имя не может быть пустым и содержать что-либо, кроме букв</li>
         <li v-if="existsEmail">Такой email уже существует</li>
-        <input v-model="name" placeholder="Имя" type="text">
+        <input v-model="name" placeholder="Имя" type="text" class="btn">
         <li v-if="!correctUsername">Вид логина: aaaa@aaa.aaa</li>
-        <input v-model="email" type="text" placeholder="email@some.ru">
-        <li v-if="!correctPassword">Пароль должен содержать строчную, прописную буквы, спец символ и цифру</li>
-        <input v-model="password" type="password" placeholder="password">
+        <input v-model="email" type="text" placeholder="email@some.ru" class="btn">
+        <li v-if="!correctPassword">Пароль должен содержать строчную, прописную буквы, спец символ и цифру (>= 6 символов)</li>
+        <input v-model="password" type="password" placeholder="password" class="btn">
         <li v-if="!equalPasswords">Пароли не совпадают</li>
-        <input v-model="repeatPassword" type="password" placeholder="repeat pass">
-        <button v-on:click="registation">Register</button>
+        <input v-model="repeatPassword" type="password" placeholder="repeat pass" class="btn">
+        <button v-on:click="registation" class="btn">Register</button>
     </div>
 </template>
 
@@ -37,7 +37,7 @@ export default {
             this.correctPassword = true
             this.existsEmail = false
 
-            if (this.regexEmail.test(this.email) == "has-error") {
+            if (this.regexEmail.test(this.email) == false) {
                 this.correctUsername = false
             }
             else {
@@ -49,6 +49,14 @@ export default {
             }
             else {
                 this.correctName = true
+            }
+
+            if (this.password.length < 6) {
+                this.correctPassword = false
+                return
+            }
+            else {
+                this.correctPassword = true
             }
 
             if (this.password == this.repeatPassword) {
@@ -96,6 +104,15 @@ export default {
 </script>
 
 <style>
+    .form li {
+        padding: 0;
+        margin: 0;
+        color: red;
+    }
+
+    .form {
+        display: inline-grid;
+    }
 
     .btn {
         color: #42b983;

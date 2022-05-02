@@ -1,7 +1,7 @@
 <template>
-    <div class="container">
+    <div class="book-container">
         <div v-for="(item, index) in items" class="item">
-            <img :src="'images/' + item.item.imgSrc" width="256" height="256">
+            <img :src="'images/' + item.item.imgSrc" @error="defaultImg" width="256" height="256">
             <li>{{ item.item.name }}</li>
             <button v-on:click="remove(item.id, index)" class="btn">Delete</button>
         </div>
@@ -43,17 +43,21 @@ export default {
             .then((result) => {
                 this.items.splice(index, 1)
             })
+        },
+        defaultImg(event) {
+            event.target.src = window.location.origin + '/images/img.png'
         }
     }
 }
 </script>
 
 <style>
-    .container {
+    .book-container {
         max-width: 1320px;
         width: 90%;
-        display: flex;
         flex-wrap: wrap;
+        display: flex;
+        flex-direction: row;
     }
 
     .item {

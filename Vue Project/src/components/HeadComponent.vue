@@ -4,8 +4,8 @@
             <img src="images/loading.gif">
         </div>
         <div v-else class="categories">
-            <li v-for="(cat, index) in categories">
-                <a href="#" v-on:click="onClickCategory(index + 1)">{{ cat.name }}</a>
+            <li v-for="(cat, index) in categories" v-on:click="onClickCategory(index)" class="item">
+                <p style="font-size: 18px;">{{ cat.name }}</p>
             </li>
         </div>
     </div>
@@ -48,6 +48,20 @@ export default {
 </script>
 
 <style>
+    p {
+        padding: 0;
+        margin: 0;
+    }
+
+    .item:hover {
+        cursor: pointer;
+    }
+
+    .categories li:hover {
+        background: #CAEBDA;
+        cursor: pointer;
+    }
+
     .categories {
         display: flex;
         flex-wrap: wrap;

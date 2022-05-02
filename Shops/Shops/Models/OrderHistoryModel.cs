@@ -6,7 +6,7 @@ namespace SuperMegaHyperPuperShop.Models
     public class OrderHistoryModel
     {
 #nullable disable
-        public virtual List<OrderItemModel> OrderItem { get; set; }
+        public virtual IEnumerable<OrderItemModel> OrderItem { get; set; }
         public virtual OrderInfoModel OrderInfo { get; set; }
 #nullable enable
         public int Id { get; set; }

@@ -36,7 +36,7 @@ namespace SuperMegaHyperPuperShop.BLL.Services.Implementations
             return _repository.DeleteById(id, token);
         }
 
-        public async Task<IEnumerable<Dto>> Get(CancellationToken token)
+        public virtual async Task<IEnumerable<Dto>> Get(CancellationToken token)
         {
             return _mapper.Map<IEnumerable<Dto>>(await _repository.Get(token));
         }

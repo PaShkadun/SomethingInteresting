@@ -25,7 +25,19 @@ namespace Shops.DLL.Repositories.Implementation
                            .Include(x => x.OrderInfo)
                            .ThenInclude(x => x.Person)
                            .Include(x => x.OrderItem)
+                           .ThenInclude(x => x.Item)
+                           .ThenInclude(x => x.Category)
                            .ToListAsync(token);
+        }
+
+        public async Task<IEnumerable<OrderHistoryEntity>> GetByPerson(string personId, CancellationToken token)
+        {
+            return await _context.OrderHistories
+                            .AsNoTracking()
+                            .Include(x => x.OrderInfo)
+                            .ThenInclude(x => x.Person)
+                            .Where(x => x.OrderInfo.PersonId == personId)
+                            .ToListAsync(token);
         }
     }
 }

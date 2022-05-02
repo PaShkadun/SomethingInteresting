@@ -21,10 +21,17 @@ namespace Shops.DLL.Repositories.Implementation
 
         public async Task<PagedList<ItemEntity>> GetByCategory(int id, SortingData sorting, CancellationToken token)
         {
-            var query = _context.Items.Where(x => x.CategoryId == id);
+            var query = _context.Items.Where(x => x.CategoryId == id).Include(x => x.Category);
             var result = await PagedList<ItemEntity>.ToPagedList(query, sorting, token);
 
             return result;
+        }
+
+        public override Task<ItemEntity> GetById(int id, CancellationToken token)
+        {
+            var query = _context.Items.Include(x => x.Category).FirstOrDefaultAsync(x => x.Id == id, token);
+
+            return query;
         }
     }
 }

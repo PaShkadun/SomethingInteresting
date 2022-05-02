@@ -28,7 +28,7 @@ namespace Shops.DLL.Repositories.Implementation
 
         public async Task<IEnumerable<OrderItemEntity>> GetAllByOrderInfo(int orderInfoId, CancellationToken token)
         {
-            var result = await _context.OrderItems.Where(x => x.OrderInfoId == orderInfoId).ToListAsync(token);
+            var result = await _context.OrderItems.Where(x => x.OrderHistory.OrderInfoId == orderInfoId).ToListAsync(token);
 
             return result;
         }

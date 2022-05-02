@@ -10,6 +10,5 @@ namespace SuperMegaHyperPuperShop.BLL.DTO
         public int ItemId { get; set; }
         public int ItemCount { get; set; }
         public int OrderHistoryId { get; set; }
-        public int OrderInfoId { get; set; }
     }
 }

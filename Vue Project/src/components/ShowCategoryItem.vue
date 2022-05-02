@@ -1,14 +1,17 @@
 <template>
     <div>
+        <div v-if="isLoading">
+            <img src="http://localhost:8080/images/loading.gif" :width="256" :height="256">
+        </div>
         <div>
-            <select @change="onChangeSorting($event)">
+            <select @change="onChangeSorting($event)" class="btn">
                 <option disabled>Сортировать по:</option>
                 <option value="name">По имени А-Я</option>
                 <option value="name desc">По имени Я-А</option>
                 <option value="price">Сначала дешёвые</option>
                 <option value="price desc">Сначала дорогие</option>
             </select>
-            <select @change="onChangeSize($event)">
+            <select @change="onChangeSize($event)" class="btn">
                 <option disabled>Элементов на странице</option>
                 <option value="5">5</option>
                 <option value="10">10</option>
@@ -18,18 +21,20 @@
         </div>
         <div class="someC">
             <div v-for="item in items">
-                <div>
-                    <a href="#" v-on:click="selectItem(item.id)">
+                <div class="item">
+                    <a v-on:click="selectItem(item.id)">
                         <li>{{ item.name }}</li>
-                        <img :width="256" :height="256" :src="'images/' + item.imgSrc" onerror="this.src='images/img.png'">
+                        <img :width="256" :height="256" :src="getBaseUrl() + '/images/' + item.imgSrc" @error="defaultPath">
                         <li>{{ item.price }}</li>
                     </a>
                 </div>
             </div>
         </div>
-        <div v-for="index in paginationInfo.TotalPages">
-            <button v-if="index === paginationInfo.CurrentPage" class="btn" disabled>{{index}}</button>
-            <button v-else class="btn" v-on:click="changePage(index)">{{index}}</button>
+        <div class="buttons">
+            <div v-for="index in paginationInfo.TotalPages">
+                <button v-if="index === paginationInfo.CurrentPage" class="btn" disabled>{{index}}</button>
+                <button v-else class="btn" v-on:click="changePage(index)">{{index}}</button>
+            </div>
         </div>
     </div>
 </template>
@@ -48,7 +53,8 @@ export default {
             paginationInfo: [],
             sortBy: "",
             itemPerPage: 5,
-            currentPage: 1
+            currentPage: 1,
+            isLoading: false
         }
     },
     methods: {
@@ -64,16 +70,20 @@ export default {
             if (this.currentCategoryId <= 0) {
                 return;
             }
+            
+            this.isLoading = true
 
             console.log("send request")
 
             axios.get("https://localhost:5006/item/getByCategory?categoryId=" + parseInt(this.currentCategoryId) + "&pageSize=" + parseInt(this.itemPerPage) + "&pageNumber=" + (this.currentPage) + "&orderBy=" + this.sortBy)
             .then((result) => {
+                this.isLoading = false
                 console.log("OK")
                 this.$emit("listChange", result.data);
                 this.paginationInfo = JSON.parse(result.headers['x-pagination'])
             })
             .catch((result) => {
+                this.isLoading = false
                 console.log("error")
                 console.log(result)
             })
@@ -84,6 +94,12 @@ export default {
         },
         selectItem(index) {
             this.$emit("selectItem", index)
+        },
+        getBaseUrl() {
+            return window.location.origin
+        },
+        defaultPath(event) {
+            event.target.src = this.getBaseUrl() + '/images/img.png'
         }
     },
     mounted() {
@@ -101,8 +117,20 @@ export default {
 </script>
 
 <style>
+    .item p {
+        padding: 0;
+        margin: 0;
+    }
+
+    .buttons {
+        display: inline-flex;
+    }
+
+    .item a:hover {
+        background: #CAEBDA;
+    }
+
     .someC {
-        max-width: 1320px;
         width: 90%;
         display: flex;
         flex-wrap: wrap;

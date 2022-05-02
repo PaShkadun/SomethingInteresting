@@ -1,7 +1,7 @@
 <template>
   <div id="app">
   
-    <Login @register="setReg" @showBook="setBookmark" @showBucket="setBucket"/>
+    <Login @register="register" @showBook="setBookmark" @showBucket="setBucket"/>
 
     <HeadComponent @categoryChange="changeCat">
     </HeadComponent>
@@ -17,7 +17,6 @@
         </ShowCategoryItem>
       </div>
       <div class="item" v-else-if="itemId >= 1">
-        {{ itemId }}
         <ShowItem :itemId="itemId">
         </ShowItem>
       </div>
@@ -80,6 +79,10 @@ export default {
     }
   },
   methods: {
+    register() {
+      window.location.pathname = '/register'
+      this.setReg()
+    },
     setReg() {
       this.registration = true
       this.categoryId = -1
@@ -103,16 +106,13 @@ export default {
     },
     changeCat(newValue, categories) {
       if (this.categories.length == 0) {
-        console.log("asdasda")
         this.categories = categories
       }
 
-      if (newValue == this.categoryId) {
-        return
-      }
+      window.location.pathname = '/' + this.categories[newValue].name.toLowerCase()
 
       this.items = []
-      this.categoryId = newValue
+      this.categoryId = this.categories[newValue]
       this.itemId = 0
       this.registation = false
       this.isBookmark = false
@@ -125,6 +125,8 @@ export default {
       this.registation = false
       this.isBookmark = false
       this.isBucket = false
+
+      window.location.pathname += '/' + index
     },
     updateList(newValue) {
       this.items = newValue
@@ -147,6 +149,14 @@ export default {
         auth.login()
         return
       }
+      else if (path == "/bucket") {
+        this.setBucket()
+        return
+      }
+      else if (path == "/bookmark") {
+        this.setBookmark()
+        return;
+      }
 
       let splitedPath = path.split('/')
       console.log(splitedPath)
@@ -154,12 +164,38 @@ export default {
       if (splitedPath.length == 2) {
         axios.get("https://localhost:5006/category/getByName?name=" + splitedPath[1])
         .then((result) => {
-          // There will be 404...
+          if (result.data == null) {
+            this.categoryId = 0
+            return
+          }
 
           this.categoryId = result.data.id
         })
         .catch((result) => {
-          console.log("err")
+          console.log("category error")
+          console.log(result)
+        })
+      }
+      else if (splitedPath.length == 3) {
+        let id = parseInt(splitedPath[2])
+
+        if (id == NaN) {
+          this.itemId = 0
+          return
+        }
+
+        axios.get("https://localhost:5006/item/getById?id=" + id)
+        .then((result) => {
+          console.log(result)
+          if (result.data.category.name.toLowerCase() != splitedPath[1]) {
+            this.itemId = 0
+            return
+          }
+
+          this.itemId = id
+        })
+        .catch((result) => {
+          console.log("item error")
           console.log(result)
         })
       }
