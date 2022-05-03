@@ -7,7 +7,7 @@ namespace SuperMegaHyperPuperShop.BLL.DTO
 #nullable disable
         public string Name { get; set; }
         public string Id { get; set; }
-        public PermissionDto Permision { get; set; }
+        public PermissionDto Permission { get; set; }
 #nullable enable
         public int PermissionId { get; set; }
     }

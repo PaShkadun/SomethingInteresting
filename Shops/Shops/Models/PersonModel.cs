@@ -7,7 +7,7 @@ namespace SuperMegaHyperPuperShop.Models
 #nullable disable
         public string Name { get; set; }
         public string Id { get; set; }
-        public PermissionModel Permision { get; set; }
+        public PermissionModel Permission { get; set; }
 #nullable enable
         public int PermissionId { get; set; }
     }

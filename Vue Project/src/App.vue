@@ -7,7 +7,13 @@
     </HeadComponent>
 
     <center>
-      <div v-if="categoryId > 0 && itemId <= 0">
+      <div v-if="mainPage" class="categories-container">
+        <div v-for="(cat, index) in categories" @click="changeCat(index, categories)">
+          <p>{{ cat.name }}</p>
+          <img :src="'images/' + cat.imgSrc" @error="$event.target.src = 'images/img.png'" :width="256" :height="256">
+        </div>
+      </div>
+      <div v-else-if="categoryId >= 0 && itemId <= 0">
         <ShowCategoryItem 
             :categoryId="categoryId" 
             :items="items" 
@@ -16,7 +22,7 @@
             @selectItem="selectItem">
         </ShowCategoryItem>
       </div>
-      <div class="item" v-else-if="itemId >= 1">
+      <div class="item" v-else-if="itemId >= 0">
         <ShowItem :itemId="itemId">
         </ShowItem>
       </div>
@@ -32,6 +38,10 @@
         <Bucket>
         </Bucket>
       </div>
+      <div v-else-if="isProfile">
+        <Profile>
+        </Profile>
+      </div>
     </center>
   </div>
 </template>
@@ -46,6 +56,7 @@ import RegisterForm from "@/components/RegisterForm"
 import AuthService from '@/components/AuthServer'
 import Bookmark from '@/components/Bookmark'
 import Bucket from '@/components/Bucket'
+import Profile from '@/components/Profile'
 import axios from 'axios'
 
 import Login from '@/pages/Login'
@@ -65,17 +76,20 @@ export default {
     axios,
     Bookmark,
     Bucket,
+    Profile,
   },
   data() {
     return {
       categoryId: -1,
       categories: [],
       items: [],
-      itemId: 0,
+      itemId: -1,
       registration: false,
       lastPath: "",
       isBookmark: false,
-      isBucket: false
+      isBucket: false,
+      mainPage: false,
+      isProfile: false
     }
   },
   methods: {
@@ -86,7 +100,7 @@ export default {
     setReg() {
       this.registration = true
       this.categoryId = -1
-      this.itemId = 0
+      this.itemId = -1
       this.isBookmark = false
       this.isBucket = false
     },
@@ -94,7 +108,7 @@ export default {
       this.isBookmark = true
       this.registation = false
       this.categoryId = -1
-      this.itemId = 0
+      this.itemId = -1
       this.isBucket = false
     },
     setBucket() {
@@ -102,18 +116,30 @@ export default {
       this.isBookmark = false
       this.registation = false
       this.categoryId = -1
-      this.itemId = 0
+      this.itemId = -1
+    },
+    setProfile() {
+      this.isBookmark = false
+      this.isBucket = false
+      this.registation = false
+      this.categoryId = -1
+      this.itemId = -1
+      this.isProfile = true
     },
     changeCat(newValue, categories) {
       if (this.categories.length == 0) {
         this.categories = categories
       }
 
+      if (newValue == -1 || this.categories[newValue] == null) {
+        return
+      }
+
       window.location.pathname = '/' + this.categories[newValue].name.toLowerCase()
 
       this.items = []
       this.categoryId = this.categories[newValue]
-      this.itemId = 0
+      this.itemId = -1
       this.registation = false
       this.isBookmark = false
       this.isBucket = false
@@ -134,13 +160,17 @@ export default {
     findPath() {
       console.log("Created")
       console.log(window.location)
-      let path = window.location.pathname
+      let path = window.location.pathname.toLowerCase()
 
       console.log(path)
 
       if (path == "/") {
+        this.mainPage = true
         return
       }
+      
+      this.mainPage = false
+
       if (path == "/register") {
         this.setReg()
         return
@@ -155,16 +185,21 @@ export default {
       }
       else if (path == "/bookmark") {
         this.setBookmark()
-        return;
+        return
+      }
+      else if (path == "/profile") {
+        this.setProfile()
+        return
       }
 
+      path = path.replace('%20', ' ')
       let splitedPath = path.split('/')
       console.log(splitedPath)
       
       if (splitedPath.length == 2) {
         axios.get("https://localhost:5006/category/getByName?name=" + splitedPath[1])
         .then((result) => {
-          if (result.data == null) {
+          if (result.data == "") {
             this.categoryId = 0
             return
           }
@@ -220,6 +255,21 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+}
+
+.categories-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+
+.categories-container div {
+    margin: 20px;
+}
+
+.categories-container div:hover {
+    cursor: pointer;
+    background: #CAEBDA;
 }
 
 li {

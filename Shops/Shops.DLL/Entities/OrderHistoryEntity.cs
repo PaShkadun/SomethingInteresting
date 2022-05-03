@@ -11,6 +11,5 @@ namespace SuperMegaHyperPuperShop.DAL.Entities
 #nullable enable
         public int Id { get; set; }
         public int OrderInfoId { get; set; }
-        public DateTime Date { get; set; }
     }
 }

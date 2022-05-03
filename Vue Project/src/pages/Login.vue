@@ -1,7 +1,7 @@
 <template>
     <div class="home">
         <div class="home">
-            <p v-if="isLoggedIn" style="display: contents;">User: {{ username }}</p>
+            <p v-if="isLoggedIn" class="username"><a href="http://localhost:8080/profile">User: {{ username }}</a></p>
             <button class="btn" @click="login" v-if="!isLoggedIn">Login</button>
             <button class="btn" @click="register" v-if="!isLoggedIn">Register</button>
             <button class="btn" @click="showBucket" v-if="isLoggedIn"><img width="32" height="32" src="http://localhost:8080/images/bucket.png"></button>
@@ -88,9 +88,19 @@
     }
 </script>
 <style>
+    .username {
+        display: contents;
+        color: blue;
+    }
+
+    .username:hover {
+        cursor: pointer;
+    }
+
     .home {
         text-align-last: right;
     }
+
     .btn {
         color: #42b983;
         font-weight: bold;

@@ -9,5 +9,6 @@ namespace SuperMegaHyperPuperShop.Models
         public string PersonId { get; set; }
 #nullable enable
         public int Id { get; set; }
+        public DateTime Date { get; set; }
     }
 }

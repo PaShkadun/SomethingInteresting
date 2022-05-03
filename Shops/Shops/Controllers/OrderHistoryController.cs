@@ -38,7 +38,7 @@ namespace Shops.Controllers
         public async Task<OrderHistoryModel> Add([FromQuery] int[] itemsIds, [FromQuery] int[] counts, [FromBody] OrderHistoryModel model, CancellationToken token)
         {
             model.OrderItem = null;
-            model.Date = DateTime.Now;
+            model.OrderInfo.Date = DateTime.Now;
 
             var orderHistory = _mapper.Map<OrderHistoryModel>(await _service.Add(_mapper.Map<OrderHistoryDto>(model), token));
 
@@ -88,6 +88,14 @@ namespace Shops.Controllers
             var dto = _mapper.Map<OrderHistoryDto>(model);
 
             return _mapper.Map<OrderHistoryModel>(await _service.Update(dto, token));
+        }
+
+        [HttpGet("getByPerson")]
+        public async Task<IEnumerable<OrderHistoryModel>> GetByPerson(string personId, CancellationToken token)
+        {
+            var result = await _service.GetByPerson(personId, token);
+
+            return _mapper.Map<IEnumerable<OrderHistoryModel>>(result);
         }
     }
 }

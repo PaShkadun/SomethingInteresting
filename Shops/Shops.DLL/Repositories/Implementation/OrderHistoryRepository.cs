@@ -36,6 +36,9 @@ namespace Shops.DLL.Repositories.Implementation
                             .AsNoTracking()
                             .Include(x => x.OrderInfo)
                             .ThenInclude(x => x.Person)
+                            .Include(x => x.OrderItem)
+                            .ThenInclude(x => x.Item)
+                            .ThenInclude(x => x.Category)
                             .Where(x => x.OrderInfo.PersonId == personId)
                             .ToListAsync(token);
         }

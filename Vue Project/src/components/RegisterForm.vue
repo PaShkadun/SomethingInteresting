@@ -1,24 +1,36 @@
 <template>
     <div class="form" style="margin-top: 50px;">
-        <li v-if="!correctName">Имя не может быть пустым и содержать что-либо, кроме букв</li>
-        <li v-if="existsEmail">Такой email уже существует</li>
-        <input v-model="name" placeholder="Имя" type="text" class="btn">
-        <li v-if="!correctUsername">Вид логина: aaaa@aaa.aaa</li>
-        <input v-model="email" type="text" placeholder="email@some.ru" class="btn">
-        <li v-if="!correctPassword">Пароль должен содержать строчную, прописную буквы, спец символ и цифру (>= 6 символов)</li>
-        <input v-model="password" type="password" placeholder="password" class="btn">
-        <li v-if="!equalPasswords">Пароли не совпадают</li>
-        <input v-model="repeatPassword" type="password" placeholder="repeat pass" class="btn">
-        <button v-on:click="registation" class="btn">Register</button>
+        <div v-if="!isComplete && !isLoggedIn">
+            <li v-if="!correctName">Имя не может быть пустым и содержать что-либо, кроме букв</li>
+            <li v-if="existsEmail">Такой email уже существует</li>
+            <input v-model="name" placeholder="Имя" type="text" class="btn">
+            <li v-if="!correctUsername">Вид логина: aaaa@aaa.aaa</li>
+            <input v-model="email" type="text" placeholder="email@some.ru" class="btn">
+            <li v-if="!correctPassword">Пароль должен содержать строчную, прописную буквы, спец символ и цифру (>= 6 символов)</li>
+            <input v-model="password" type="password" placeholder="password" class="btn">
+            <li v-if="!equalPasswords">Пароли не совпадают</li>
+            <input v-model="repeatPassword" type="password" placeholder="repeat pass" class="btn">
+            <button v-on:click="registation" class="btn">Register</button>
+        </div>
+        <div v-else-if="isLoggedIn">
+            <li style="color: red; font-size: 18px;">Вы уже авторизованы!</li>
+        </div>
+        <div v-else-if="isComplete">
+            <li style="color: green; fond-size: 18px">Регистрация прошла успешно.</li>
+        </div>
     </div>
 </template>
 
 <script>
 import axios from "axios"
+import AuthServer from "@/components/AuthServer"
+
+const auth = new AuthServer();
 
 export default {
     data() {
         return {
+            isLoggedIn: false,
             email: "",
             password: "",
             repeatPassword: "",
@@ -28,9 +40,18 @@ export default {
             correctUsername: true,
             correctName: true,
             existsEmail: false,
+            isComplete: false,
             regexEmail: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,24}))$/,
             regexName: /([A-z])\w+/
         }
+    },
+    mounted() {
+        auth.getUser()
+        .then((result) => {
+            if (result != null) {
+                this.isLoggedIn = true
+            }
+        })
     },
     methods: {
         registation() {
@@ -91,6 +112,7 @@ export default {
                         })
                         .then((res) => {
                             console.log(res)
+                            this.isComplete = true
                         })
                     }
                 })
@@ -104,13 +126,13 @@ export default {
 </script>
 
 <style>
-    .form li {
+    .form div li {
         padding: 0;
         margin: 0;
         color: red;
     }
 
-    .form {
+    .form div {
         display: inline-grid;
     }
 

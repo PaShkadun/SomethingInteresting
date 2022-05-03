@@ -1,40 +1,46 @@
 <template>
     <div>
-        <div v-if="isLoading">
-            <img src="http://localhost:8080/images/loading.gif" :width="256" :height="256">
-        </div>
-        <div>
-            <select @change="onChangeSorting($event)" class="btn">
-                <option disabled>Сортировать по:</option>
-                <option value="name">По имени А-Я</option>
-                <option value="name desc">По имени Я-А</option>
-                <option value="price">Сначала дешёвые</option>
-                <option value="price desc">Сначала дорогие</option>
-            </select>
-            <select @change="onChangeSize($event)" class="btn">
-                <option disabled>Элементов на странице</option>
-                <option value="5">5</option>
-                <option value="10">10</option>
-                <option value="25">25</option>
-                <option value="50">50</option>
-            </select>
-        </div>
-        <div class="someC">
-            <div v-for="item in items">
-                <div class="item">
-                    <a v-on:click="selectItem(item.id)">
-                        <li>{{ item.name }}</li>
-                        <img :width="256" :height="256" :src="getBaseUrl() + '/images/' + item.imgSrc" @error="defaultPath">
-                        <li>{{ item.price }}</li>
-                    </a>
+        <div v-if="categoryId > 0">
+            <div v-if="isLoading">
+                <img src="http://localhost:8080/images/loading.gif" :width="256" :height="256">
+            </div>
+            <div>
+                <select @change="onChangeSorting($event)" class="btn">
+                    <option disabled>Сортировать по:</option>
+                    <option value="name">По имени А-Я</option>
+                    <option value="name desc">По имени Я-А</option>
+                    <option value="price">Сначала дешёвые</option>
+                    <option value="price desc">Сначала дорогие</option>
+                </select>
+                <select @change="onChangeSize($event)" class="btn">
+                    <option disabled>Элементов на странице</option>
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                    <option value="25">25</option>
+                    <option value="50">50</option>
+                </select>
+            </div>
+            <div class="someC">
+                <div v-for="item in items">
+                    <div class="item">
+                        <a v-on:click="selectItem(item.id)">
+                            <li>{{ item.name }}</li>
+                            <img :width="256" :height="256" :src="getBaseUrl() + '/images/' + item.imgSrc" @error="defaultPath">
+                            <li>{{ item.price }}</li>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="buttons">
+                <div v-for="index in paginationInfo.TotalPages">
+                    <button v-if="index === paginationInfo.CurrentPage" class="btn" disabled>{{index}}</button>
+                    <button v-else class="btn" v-on:click="changePage(index)">{{index}}</button>
                 </div>
             </div>
         </div>
-        <div class="buttons">
-            <div v-for="index in paginationInfo.TotalPages">
-                <button v-if="index === paginationInfo.CurrentPage" class="btn" disabled>{{index}}</button>
-                <button v-else class="btn" v-on:click="changePage(index)">{{index}}</button>
-            </div>
+        <div v-else>
+            <li style="font-size: 36px;">404</li>
+            <li style="color: red; font-size: 24px;">Category not found</li>
         </div>
     </div>
 </template>

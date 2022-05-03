@@ -1,21 +1,27 @@
 <template>
-    <div style="display: flex; width: 100%;">
-        <div class="img">
-            <img :src="getBaseUrl() + '/images/' + item.imgSrc" @error="defaultImg" :width="512" :height="512">
+    <div style="width: 100%;">
+        <div v-if="itemId > 0" style="display: flex;">
+            <div class="img">
+                <img :src="getBaseUrl() + '/images/' + item.imgSrc" @error="defaultImg" :width="512" :height="512">
+            </div>
+            <div class="item-info">
+                <li>{{item.name}}</li>
+                <li>{{item.price}}</li>
+                <li>{{item.description}}</li>
+                <div v-if="isLoggedIn">
+                    <button v-if="!addedToBucket" v-on:click="addToBucket" class="btn">Bucket</button>
+                    <button v-else v-on:click="addToBucket" class="btn" disabled>Bucket</button>
+                    <button v-if="!addedToBookmark" v-on:click="addToBookmark" class="btn">Bookmark</button>
+                    <button v-else v-on:click="addToBookmark" class="btn" disabled>Bookmark</button>
+                </div>
+                <div v-else>
+                    <li>To add this item to bucket/bookmark, please, <button v-on:click="login" class="btn">login</button></li>
+                </div>
+            </div>
         </div>
-        <div class="item-info">
-            <li>{{item.name}}</li>
-            <li>{{item.price}}</li>
-            <li>{{item.description}}</li>
-            <div v-if="isLoggedIn">
-                <button v-if="!addedToBucket" v-on:click="addToBucket" class="btn">Bucket</button>
-                <button v-else v-on:click="addToBucket" class="btn" disabled>Bucket</button>
-                <button v-if="!addedToBookmark" v-on:click="addToBookmark" class="btn">Bookmark</button>
-                <button v-else v-on:click="addToBookmark" class="btn" disabled>Bookmark</button>
-            </div>
-            <div v-else>
-                <li>To add this item to bucket/bookmark, please, <button v-on:click="login" class="btn">login</button></li>
-            </div>
+        <div v-else>
+            <li style="font-size: 36px;">404</li>
+            <li style="color: red; font-size: 24px;">Item not found</li>
         </div>
     </div>
 </template>

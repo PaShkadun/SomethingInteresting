@@ -1,4 +1,6 @@
-﻿namespace SuperMegaHyperPuperShop.DAL.Entities
+﻿using System;
+
+namespace SuperMegaHyperPuperShop.DAL.Entities
 {
     public class OrderInfoEntity
     {
@@ -8,5 +10,6 @@
         public string PersonId { get; set; }
 #nullable enable
         public int Id { get; set; }
+        public DateTime Date { get; set; }
     }
 }

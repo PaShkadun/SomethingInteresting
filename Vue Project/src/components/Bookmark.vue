@@ -1,10 +1,13 @@
 <template>
-    <div class="book-container">
+    <div class="book-container" v-if="items.length > 0">
         <div v-for="(item, index) in items" class="item">
             <img :src="'images/' + item.item.imgSrc" @error="defaultImg" width="256" height="256">
             <li>{{ item.item.name }}</li>
             <button v-on:click="remove(item.id, index)" class="btn">Delete</button>
         </div>
+    </div>
+    <div v-else>
+        <li style="color: red; font-size: 18px;">Закладок нет</li>
     </div>
 </template>
 
