@@ -17,7 +17,10 @@
         <div v-else>
             <img src="http://localhost:8080/images/loading.gif">
         </div>
-        <div class="history">
+        <div v-if="orderHistory.length == 0">
+            <li style="color: red; font-size: 18px;">История заказов пуста</li>
+        </div>
+        <div class="history" v-else>
             <div v-for="OH in orderHistory">
                 <li>Номер заказа: {{ OH.id }}</li>
                 <li>Дата заказа: {{ OH.orderInfo.date }}</li>
