@@ -1,6 +1,3 @@
-using IdentityServer4;
-using IdentityServer4.Services;
-using IdentityServerHost.Quickstart.UI;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
@@ -9,9 +6,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using Microsoft.IdentityModel.Tokens;
 using NewIdentity.Context;
 using NewIdentity.Models;
+using System;
 using System.Reflection;
 
 namespace NewIdentity
@@ -32,9 +29,7 @@ namespace NewIdentity
 
             services.AddDbContext<AuthContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
-            System.Console.WriteLine(Configuration.GetConnectionString("DefaultConnection"));
-
-            //services.AddIdentity<AuthUser, IdentityRole>().AddEntityFrameworkStores<AuthContext>().AddDefaultTokenProviders();*/
+            Console.WriteLine(Configuration.GetConnectionString("DefaultConnection"));
 
             var migrationsAssembly = typeof(Startup).GetTypeInfo().Assembly.GetName().Name;
 
@@ -80,8 +75,6 @@ namespace NewIdentity
             app.UseAuthorization();
 
             app.UseCors("VuePolicy");
-
-            //DbInitializator.InitializeDatabase(app);
 
             app.UseEndpoints(endpoints =>
             {

@@ -20,7 +20,6 @@ namespace NewIdentity
         {
             return new List<ApiResource>
             {
-                new ApiResource("Api2", "NewIdentity"),
             };
         }
 
@@ -28,8 +27,6 @@ namespace NewIdentity
         {
             return new List<ApiScope>
             {
-                new ApiScope("Shop", "NewIdentity"),
-                new ApiScope("Company", "NewIdentity")
             };
         }
 
@@ -52,69 +49,9 @@ namespace NewIdentity
                     AllowedScopes =
                     {
                         StandardScopes.OpenId,
-                        StandardScopes.Profile,
-                        "Company",
-                        "Shop"
+                        StandardScopes.Profile
                     }
                 },
-
-                // machine to machine client
-                new Client
-                {
-                    AllowedGrantTypes = GrantTypes.ResourceOwnerPassword,
-
-                    ClientSecrets = { new Secret("secret".Sha256()) },
-
-                    RequireClientSecret = false,
-
-                    ClientId = "client",
-                    ClientName = "Web",
-                    AccessTokenType = AccessTokenType.Reference,
-                    AccessTokenLifetime = 600,
-                    IdentityTokenLifetime = 600,
-                    IncludeJwtId = true,
-
-                    AlwaysIncludeUserClaimsInIdToken = true,
-
-                    AllowAccessTokensViaBrowser = true,
-
-                    RedirectUris = { "http://localhost:8080/callback.html" },
-                    PostLogoutRedirectUris = { "http://localhost:8080" },
-
-                    AllowedCorsOrigins = new List<string>
-                    {
-                        "http://localhost:8080"
-                    },
-
-                    AllowedScopes = new List<string>
-                    {
-                        "openid",
-                        "profile",
-                        "Api1"
-                    }
-                },
-                
-                // interactive ASP.NET Core MVC client
-                new Client
-                {
-                    ClientId = "mvc",
-                    ClientSecrets = { new Secret("secret".Sha256()) },
-
-                    AllowedGrantTypes = GrantTypes.ResourceOwnerPassword,
-                    
-                    // where to redirect to after login
-                    RedirectUris = { "https://localhost:5002/signin-oidc" },
-
-                    // where to redirect to after logout
-                    PostLogoutRedirectUris = { "https://localhost:5002/signout-callback-oidc" },
-
-                    AllowedScopes = new List<string>
-                    {
-                        IdentityServerConstants.StandardScopes.OpenId,
-                        IdentityServerConstants.StandardScopes.Profile,
-                        "Api1"
-                    }
-                }
             };
     }
 }

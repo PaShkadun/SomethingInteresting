@@ -14,7 +14,7 @@ export default class AuthService {
             client_id: "js",
             redirect_uri: "http://localhost:8080/callback.html",
             response_type: "code",
-            scope:"openid profile Company Shop",
+            scope: "openid profile",
             post_logout_redirect_uri : "http://localhost:8080/",
         };
  
